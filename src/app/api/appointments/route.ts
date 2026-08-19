@@ -6,10 +6,11 @@ import {
 } from "@/lib/db";
 
 const SERVICES = [
-  "Sessão de fotos",
-  "Design de marca",
-  "Desenvolvimento web",
-  "Consultoria",
+  "Corte",
+  "Mechas",
+  "Loiras",
+  "Morena iluminada",
+  "Avaliação",
   "Outro",
 ];
 

@@ -32,16 +32,16 @@ export default function AgendarPage() {
       </Link>
 
       <div className="mb-10 text-center">
-        <h1 className="text-3xl font-bold tracking-tight text-zinc-50 sm:text-4xl">
+        <h1 className="font-serif text-3xl font-medium tracking-tight text-[#f5f2ed] sm:text-5xl">
           Agendar horário
         </h1>
-        <p className="mt-3 text-zinc-400">
-          Preencha os dados abaixo e escolha o melhor dia e horário. Você
-          receberá a confirmação em breve.
+        <p className="mx-auto mt-4 max-w-md text-zinc-400">
+          Escolha o serviço, a data e o horário. Em breve você receberá a
+          confirmação pelo WhatsApp.
         </p>
       </div>
 
-      <div className="rounded-3xl border border-zinc-800 bg-zinc-900 p-6 sm:p-8">
+      <div className="rounded-3xl border border-zinc-800 bg-black p-6 sm:p-8">
         <BookingForm />
       </div>
     </section>
