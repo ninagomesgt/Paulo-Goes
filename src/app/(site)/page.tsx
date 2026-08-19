@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 const projects = [
@@ -6,42 +7,56 @@ const projects = [
     category: "Desenvolvimento Web",
     description:
       "Plataforma de loja virtual com checkout integrado e painel do vendedor.",
-    gradient: "from-zinc-700/70 to-zinc-900",
+    image: "/projetos/projeto-1.jpg",
   },
   {
     title: "App de Delivery",
     category: "Mobile",
     description:
       "Aplicativo de pedidos com rastreio em tempo real e pagamento no app.",
-    gradient: "from-amber-500/20 to-zinc-900",
+    image: "/projetos/projeto-2.jpg",
   },
   {
     title: "Identidade Visual Aurora",
     category: "Design",
     description:
       "Marca completa: logotipo, paleta, tipografia e guia de aplicação.",
-    gradient: "from-zinc-800 to-black",
+    image: "/projetos/projeto-3.jpg",
   },
   {
     title: "Dashboard Fintech",
     category: "Desenvolvimento Web",
     description:
       "Painel analítico com métricas em tempo real e relatórios exportáveis.",
-    gradient: "from-yellow-600/25 to-zinc-900",
+    image: "/projetos/projeto-4.jpg",
   },
   {
     title: "Landing Inkwell",
     category: "Design",
     description:
       "Landing page de alta conversão com copywriting e SEO on-page.",
-    gradient: "from-amber-600/15 to-zinc-950",
+    image: "/projetos/projeto-5.jpg",
   },
   {
     title: "Sistema de Agendamentos",
     category: "SaaS",
     description:
       "Plataforma SaaS de reservas de horários, com dashboard e confirmações.",
-    gradient: "from-zinc-600/50 to-zinc-900",
+    image: "/projetos/projeto-6.jpg",
+  },
+  {
+    title: "Campanha de Marketing",
+    category: "Conteúdo",
+    description:
+      "Criação de conteúdo e campanhas para redes sociais e anúncios.",
+    image: "/projetos/projeto-7.jpg",
+  },
+  {
+    title: "Direção de Arte",
+    category: "Criativo",
+    description:
+      "Peças visuais com identidade, impacto e consistência de marca.",
+    image: "/projetos/projeto-8.jpg",
   },
 ];
 
@@ -194,10 +209,16 @@ export default function Home() {
               key={project.title}
               className="group overflow-hidden rounded-3xl border border-zinc-800 bg-zinc-900 transition-colors hover:border-brand/50"
             >
-              <div
-                className={`flex h-40 items-end bg-gradient-to-br ${project.gradient} p-4`}
-              >
-                <span className="rounded-full border border-brand/40 bg-black/30 px-3 py-1 text-xs font-semibold text-brand backdrop-blur">
+              <div className="relative aspect-[3/4] overflow-hidden">
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  fill
+                  sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                <span className="absolute left-4 top-4 rounded-full border border-brand/40 bg-black/40 px-3 py-1 text-xs font-semibold text-brand backdrop-blur">
                   {project.category}
                 </span>
               </div>
