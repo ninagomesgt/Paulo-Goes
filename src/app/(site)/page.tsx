@@ -92,31 +92,50 @@ export default function Home() {
           aria-hidden
           className="absolute inset-0 -z-10 bg-[radial-gradient(60%_50%_at_50%_0%,rgba(212,175,55,0.14),transparent)]"
         />
-        <div className="mx-auto flex max-w-6xl flex-col items-center px-4 pb-20 pt-24 text-center sm:px-6 sm:pt-32">
-          <p className="mb-4 rounded-full border border-amber-400/30 bg-amber-400/10 px-4 py-1.5 text-sm font-medium text-brand">
-            Portfólio & Agenda SaaS
-          </p>
-          <h1 className="max-w-3xl text-4xl font-bold tracking-tight text-zinc-50 sm:text-6xl">
-            Paulo Goes — ideias que viram{" "}
-            <span className="text-brand">produtos</span>
-          </h1>
-          <p className="mt-6 max-w-2xl text-lg text-zinc-400">
-            Desenvolvedor e criativo criando experiências digitais memoráveis.
-            Conheça meu trabalho e agende um horário direto pela plataforma.
-          </p>
-          <div className="mt-10 flex flex-col gap-3 sm:flex-row">
-            <Link
-              href="#projetos"
-              className="rounded-full bg-brand px-6 py-3 text-sm font-semibold text-brand-foreground transition-opacity hover:opacity-90"
-            >
-              Ver projetos
-            </Link>
-            <Link
-              href="/agendar"
-              className="rounded-full border border-zinc-700 px-6 py-3 text-sm font-semibold text-zinc-200 transition-colors hover:border-brand hover:text-brand"
-            >
-              Agendar horário
-            </Link>
+        <div className="mx-auto grid max-w-6xl items-center gap-12 px-4 pb-20 pt-16 sm:px-6 sm:pt-20 lg:grid-cols-2 lg:gap-16">
+          <div className="text-center lg:text-left">
+            <p className="mb-4 inline-block rounded-full border border-amber-400/30 bg-amber-400/10 px-4 py-1.5 text-sm font-medium text-brand">
+              Portfólio & Agenda SaaS
+            </p>
+            <h1 className="text-4xl font-bold tracking-tight text-zinc-50 sm:text-6xl">
+              Paulo Goes — ideias que viram{" "}
+              <span className="text-brand">produtos</span>
+            </h1>
+            <p className="mt-6 max-w-2xl text-lg text-zinc-400">
+              Desenvolvedor e criativo criando experiências digitais memoráveis.
+              Conheça meu trabalho e agende um horário direto pela plataforma.
+            </p>
+            <div className="mt-10 flex flex-col gap-3 sm:flex-row lg:justify-start">
+              <Link
+                href="#projetos"
+                className="rounded-full bg-brand px-6 py-3 text-center text-sm font-semibold text-brand-foreground transition-opacity hover:opacity-90"
+              >
+                Ver projetos
+              </Link>
+              <Link
+                href="/agendar"
+                className="rounded-full border border-zinc-700 px-6 py-3 text-center text-sm font-semibold text-zinc-200 transition-colors hover:border-brand hover:text-brand"
+              >
+                Agendar horário
+              </Link>
+            </div>
+          </div>
+
+          <div className="relative mx-auto w-56 sm:w-72 lg:w-full lg:max-w-sm">
+            <div
+              aria-hidden
+              className="absolute -inset-4 rounded-[2.5rem] bg-gradient-to-br from-amber-400/30 via-transparent to-transparent blur-2xl"
+            />
+            <div className="relative overflow-hidden rounded-[2rem] border border-brand/40 shadow-2xl shadow-black/60">
+              <Image
+                src="/paulo.png"
+                alt="Paulo Goes"
+                width={645}
+                height={851}
+                priority
+                className="h-auto w-full object-cover"
+              />
+            </div>
           </div>
         </div>
       </section>
