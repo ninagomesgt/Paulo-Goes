@@ -34,7 +34,7 @@ function todayMin(): string {
 }
 
 const inputClass =
-  "w-full rounded-xl border border-zinc-300 bg-white px-4 py-2.5 text-sm text-zinc-900 outline-none transition-colors focus:border-brand focus:ring-2 focus:ring-indigo-100";
+  "w-full rounded-xl border border-zinc-700 bg-zinc-950 px-4 py-2.5 text-sm text-zinc-100 placeholder:text-zinc-500 outline-none transition-colors focus:border-brand focus:ring-2 focus:ring-amber-500/20";
 
 export default function BookingForm() {
   const [form, setForm] = useState({
@@ -79,7 +79,7 @@ export default function BookingForm() {
 
   if (done) {
     return (
-      <div className="rounded-3xl border border-emerald-200 bg-emerald-50 p-10 text-center">
+      <div className="rounded-3xl border border-emerald-500/30 bg-emerald-500/10 p-10 text-center">
         <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-emerald-500 text-white">
           <svg
             className="h-7 w-7"
@@ -91,13 +91,13 @@ export default function BookingForm() {
             <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
           </svg>
         </div>
-        <h2 className="text-2xl font-bold text-zinc-900">
+        <h2 className="text-2xl font-bold text-zinc-50">
           Pedido enviado!
         </h2>
-        <p className="mt-2 text-zinc-600">
+        <p className="mt-2 text-zinc-400">
           Seu agendamento para{" "}
-          <strong>{form.date.split("-").reverse().join("/")}</strong> às{" "}
-          <strong>{form.time}</strong> foi registrado. Você receberá a
+          <strong className="text-brand">{form.date.split("-").reverse().join("/")}</strong> às{" "}
+          <strong className="text-brand">{form.time}</strong> foi registrado. Você receberá a
           confirmação em breve.
         </p>
         <button
@@ -113,7 +113,7 @@ export default function BookingForm() {
               notes: "",
             });
           }}
-          className="mt-6 rounded-full bg-brand px-6 py-2.5 text-sm font-semibold text-white hover:opacity-90"
+          className="mt-6 rounded-full bg-brand px-6 py-2.5 text-sm font-semibold text-brand-foreground hover:opacity-90"
         >
           Agendar outro horário
         </button>
@@ -125,7 +125,7 @@ export default function BookingForm() {
     <form onSubmit={handleSubmit} className="space-y-5">
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
-          <label htmlFor="clientName" className="mb-1.5 block text-sm font-medium text-zinc-700">
+          <label htmlFor="clientName" className="mb-1.5 block text-sm font-medium text-zinc-300">
             Nome completo
           </label>
           <input
@@ -138,7 +138,7 @@ export default function BookingForm() {
           />
         </div>
         <div>
-          <label htmlFor="clientPhone" className="mb-1.5 block text-sm font-medium text-zinc-700">
+          <label htmlFor="clientPhone" className="mb-1.5 block text-sm font-medium text-zinc-300">
             Telefone / WhatsApp
           </label>
           <input
@@ -153,7 +153,7 @@ export default function BookingForm() {
       </div>
 
       <div>
-        <label htmlFor="clientEmail" className="mb-1.5 block text-sm font-medium text-zinc-700">
+        <label htmlFor="clientEmail" className="mb-1.5 block text-sm font-medium text-zinc-300">
           E-mail
         </label>
         <input
@@ -168,7 +168,7 @@ export default function BookingForm() {
       </div>
 
       <div>
-        <label htmlFor="service" className="mb-1.5 block text-sm font-medium text-zinc-700">
+        <label htmlFor="service" className="mb-1.5 block text-sm font-medium text-zinc-300">
           Serviço
         </label>
         <select
@@ -189,7 +189,7 @@ export default function BookingForm() {
 
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
-          <label htmlFor="date" className="mb-1.5 block text-sm font-medium text-zinc-700">
+          <label htmlFor="date" className="mb-1.5 block text-sm font-medium text-zinc-300">
             Data
           </label>
           <input
@@ -203,7 +203,7 @@ export default function BookingForm() {
           />
         </div>
         <div>
-          <label htmlFor="time" className="mb-1.5 block text-sm font-medium text-zinc-700">
+          <label htmlFor="time" className="mb-1.5 block text-sm font-medium text-zinc-300">
             Horário
           </label>
           <select
@@ -224,8 +224,8 @@ export default function BookingForm() {
       </div>
 
       <div>
-        <label htmlFor="notes" className="mb-1.5 block text-sm font-medium text-zinc-700">
-          Observações <span className="font-normal text-zinc-400">(opcional)</span>
+        <label htmlFor="notes" className="mb-1.5 block text-sm font-medium text-zinc-300">
+          Observações <span className="font-normal text-zinc-500">(opcional)</span>
         </label>
         <textarea
           id="notes"
@@ -238,7 +238,7 @@ export default function BookingForm() {
       </div>
 
       {error && (
-        <p className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-600">
+        <p className="rounded-xl border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm text-red-300">
           {error}
         </p>
       )}
@@ -246,7 +246,7 @@ export default function BookingForm() {
       <button
         type="submit"
         disabled={loading}
-        className="w-full rounded-full bg-brand px-6 py-3 text-sm font-semibold text-white transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50"
+        className="w-full rounded-full bg-brand px-6 py-3 text-sm font-semibold text-brand-foreground transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50"
       >
         {loading ? "Enviando..." : "Confirmar agendamento"}
       </button>

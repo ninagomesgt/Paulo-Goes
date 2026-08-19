@@ -13,7 +13,7 @@ export default function AgendarPage() {
     <section className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-20">
       <Link
         href="/"
-        className="mb-8 inline-flex items-center gap-1.5 text-sm font-medium text-zinc-500 hover:text-zinc-900"
+        className="mb-8 inline-flex items-center gap-1.5 text-sm font-medium text-zinc-400 hover:text-brand"
       >
         <svg
           className="h-4 w-4"
@@ -32,16 +32,16 @@ export default function AgendarPage() {
       </Link>
 
       <div className="mb-10 text-center">
-        <h1 className="text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl">
+        <h1 className="text-3xl font-bold tracking-tight text-zinc-50 sm:text-4xl">
           Agendar horário
         </h1>
-        <p className="mt-3 text-zinc-600">
+        <p className="mt-3 text-zinc-400">
           Preencha os dados abaixo e escolha o melhor dia e horário. Você
           receberá a confirmação em breve.
         </p>
       </div>
 
-      <div className="rounded-3xl border border-zinc-200 bg-white p-6 shadow-sm sm:p-8">
+      <div className="rounded-3xl border border-zinc-800 bg-zinc-900 p-6 sm:p-8">
         <BookingForm />
       </div>
     </section>

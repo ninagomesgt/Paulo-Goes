@@ -9,9 +9,9 @@ const links = [
 
 export default function Navbar() {
   return (
-    <header className="sticky top-0 z-50 border-b border-zinc-200 bg-white/80 backdrop-blur">
+    <header className="sticky top-0 z-50 border-b border-zinc-800 bg-zinc-950/80 backdrop-blur">
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
-        <Link href="/" className="text-lg font-bold tracking-tight text-zinc-900">
+        <Link href="/" className="text-lg font-bold tracking-tight text-zinc-50">
           Paulo<span className="text-brand">Goes</span>
         </Link>
 
@@ -20,7 +20,7 @@ export default function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-zinc-600 transition-colors hover:text-zinc-900"
+              className="text-sm font-medium text-zinc-400 transition-colors hover:text-brand"
             >
               {link.label}
             </Link>
@@ -30,13 +30,13 @@ export default function Navbar() {
         <div className="flex items-center gap-3">
           <Link
             href="/agendar"
-            className="hidden rounded-full border border-zinc-300 px-4 py-2 text-sm font-medium text-zinc-700 transition-colors hover:border-zinc-400 hover:text-zinc-900 sm:block"
+            className="hidden rounded-full border border-zinc-700 px-4 py-2 text-sm font-medium text-zinc-300 transition-colors hover:border-brand hover:text-brand sm:block"
           >
             Agendar
           </Link>
           <Link
             href="/app/dashboard"
-            className="rounded-full bg-brand px-4 py-2 text-sm font-semibold text-white transition-opacity hover:opacity-90"
+            className="rounded-full bg-brand px-4 py-2 text-sm font-semibold text-brand-foreground transition-opacity hover:opacity-90"
           >
             Entrar
           </Link>

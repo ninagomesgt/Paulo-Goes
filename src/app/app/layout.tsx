@@ -4,15 +4,15 @@ import LogoutButton from "@/components/app/LogoutButton";
 export default function AppLayout(props: LayoutProps<"/app">) {
   return (
     <>
-      <header className="border-b border-zinc-200 bg-white">
+      <header className="border-b border-zinc-800 bg-zinc-950">
         <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
           <div className="flex items-center gap-6">
-            <Link href="/app/dashboard" className="text-lg font-bold tracking-tight text-zinc-900">
+            <Link href="/app/dashboard" className="text-lg font-bold tracking-tight text-zinc-50">
               Paulo<span className="text-brand">Agenda</span>
             </Link>
             <Link
               href="/app/dashboard"
-              className="text-sm font-medium text-zinc-600 hover:text-zinc-900"
+              className="text-sm font-medium text-zinc-400 hover:text-brand"
             >
               Painel
             </Link>
@@ -20,7 +20,7 @@ export default function AppLayout(props: LayoutProps<"/app">) {
           <div className="flex items-center gap-3">
             <Link
               href="/"
-              className="hidden text-sm font-medium text-zinc-500 hover:text-zinc-900 sm:block"
+              className="hidden text-sm font-medium text-zinc-500 hover:text-brand sm:block"
             >
               Voltar ao site
             </Link>
