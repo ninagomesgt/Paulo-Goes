@@ -104,10 +104,10 @@ export default function AppointmentList({
       <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
         {(
           [
-            ["all", "Total", "bg-zinc-900"],
-            ["pending", "Pendentes", "bg-amber-500"],
-            ["confirmed", "Confirmados", "bg-emerald-500"],
-            ["cancelled", "Cancelados", "bg-red-500"],
+            ["all", "Total", "bg-zinc-200"],
+            ["pending", "Pendentes", "bg-amber-400"],
+            ["confirmed", "Confirmados", "bg-emerald-400"],
+            ["cancelled", "Cancelados", "bg-red-400"],
           ] as [Filter, string, string][]
         ).map(([key, label, color]) => (
           <button
@@ -115,21 +115,21 @@ export default function AppointmentList({
             onClick={() => setFilter(key)}
             className={`rounded-2xl border p-4 text-left transition-colors ${
               filter === key
-                ? "border-brand ring-2 ring-indigo-100"
-                : "border-zinc-200 hover:border-zinc-300"
+                ? "border-brand ring-2 ring-amber-500/20"
+                : "border-zinc-800 hover:border-zinc-700"
             }`}
           >
             <p className={`inline-flex h-2.5 w-2.5 rounded-full ${color}`} />
-            <p className="mt-2 text-2xl font-bold text-zinc-900">
+            <p className="mt-2 text-2xl font-bold text-zinc-50">
               {counts[key]}
             </p>
-            <p className="text-sm text-zinc-500">{label}</p>
+            <p className="text-sm text-zinc-400">{label}</p>
           </button>
         ))}
       </div>
 
       {error && (
-        <p className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-600">
+        <p className="rounded-xl border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm text-red-300">
           {error}
         </p>
       )}
@@ -150,8 +150,8 @@ export default function AppointmentList({
               onClick={() => setFilter(key)}
               className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${
                 filter === key
-                  ? "bg-brand text-white"
-                  : "border border-zinc-300 text-zinc-600 hover:border-zinc-400"
+                  ? "bg-brand text-brand-foreground"
+                  : "border border-zinc-700 text-zinc-400 hover:border-zinc-600 hover:text-zinc-200"
               }`}
             >
               {label}
@@ -162,14 +162,14 @@ export default function AppointmentList({
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Buscar por nome, e-mail ou serviço"
-          className="w-full rounded-full border border-zinc-300 px-4 py-2 text-sm outline-none transition-colors focus:border-brand sm:w-72"
+          className="w-full rounded-full border border-zinc-700 bg-zinc-950 px-4 py-2 text-sm text-zinc-100 placeholder:text-zinc-500 outline-none transition-colors focus:border-brand sm:w-72"
         />
       </div>
 
       {/* Lista */}
       {filtered.length === 0 ? (
-        <div className="rounded-3xl border border-dashed border-zinc-300 p-12 text-center">
-          <p className="text-zinc-500">
+        <div className="rounded-3xl border border-dashed border-zinc-700 p-12 text-center">
+          <p className="text-zinc-400">
             {initial.length === 0
               ? "Nenhum agendamento ainda. Compartilhe a página /agendar para receber reservas."
               : "Nenhum agendamento corresponde ao filtro."}
@@ -180,11 +180,11 @@ export default function AppointmentList({
           {filtered.map((appointment) => (
             <li
               key={appointment.id}
-              className="flex flex-col gap-4 rounded-2xl border border-zinc-200 bg-white p-5 sm:flex-row sm:items-center sm:justify-between"
+              className="flex flex-col gap-4 rounded-2xl border border-zinc-800 bg-zinc-900 p-5 sm:flex-row sm:items-center sm:justify-between"
             >
               <div className="min-w-0">
                 <div className="flex flex-wrap items-center gap-2">
-                  <p className="font-semibold text-zinc-900">
+                  <p className="font-semibold text-zinc-50">
                     {appointment.clientName}
                   </p>
                   <span
@@ -193,16 +193,16 @@ export default function AppointmentList({
                     {statusLabel[appointment.status]}
                   </span>
                 </div>
-                <p className="mt-1 text-sm text-zinc-500">
+                <p className="mt-1 text-sm text-zinc-400">
                   {formatDate(appointment.date)} às {appointment.time} ·{" "}
                   {appointment.service}
                 </p>
-                <p className="mt-0.5 truncate text-sm text-zinc-400">
+                <p className="mt-0.5 truncate text-sm text-zinc-500">
                   {appointment.clientEmail}
                   {appointment.clientPhone ? ` · ${appointment.clientPhone}` : ""}
                 </p>
                 {appointment.notes && (
-                  <p className="mt-1 text-sm text-zinc-500 italic">
+                  <p className="mt-1 text-sm text-zinc-400 italic">
                     “{appointment.notes}”
                   </p>
                 )}
@@ -222,7 +222,7 @@ export default function AppointmentList({
                   <button
                     onClick={() => setStatus(appointment.id, "cancelled")}
                     disabled={busy === appointment.id}
-                    className="rounded-full border border-zinc-300 px-4 py-2 text-xs font-semibold text-zinc-600 transition-colors hover:border-zinc-400 disabled:opacity-50"
+                    className="rounded-full border border-zinc-700 px-4 py-2 text-xs font-semibold text-zinc-300 transition-colors hover:border-zinc-600 disabled:opacity-50"
                   >
                     Cancelar
                   </button>
@@ -230,7 +230,7 @@ export default function AppointmentList({
                 <button
                   onClick={() => remove(appointment.id)}
                   disabled={busy === appointment.id}
-                  className="rounded-full px-3 py-2 text-xs font-semibold text-red-600 transition-colors hover:bg-red-50 disabled:opacity-50"
+                  className="rounded-full px-3 py-2 text-xs font-semibold text-red-400 transition-colors hover:bg-red-500/10 disabled:opacity-50"
                 >
                   Excluir
                 </button>
