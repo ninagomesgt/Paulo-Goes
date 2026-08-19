@@ -38,8 +38,12 @@ export function checkPassword(password: string, stored: string): boolean {
 }
 
 export function toPublicUser(user: User): PublicUser {
-  const { passwordHash: _passwordHash, ...publicUser } = user;
-  return publicUser;
+  return {
+    id: user.id,
+    name: user.name,
+    email: user.email,
+    createdAt: user.createdAt,
+  };
 }
 
 export async function establishSession(userId: string): Promise<void> {

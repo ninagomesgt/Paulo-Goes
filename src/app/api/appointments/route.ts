@@ -4,7 +4,6 @@ import {
   createAppointment,
   listAppointments,
 } from "@/lib/db";
-import type { AppointmentStatus } from "@/lib/types";
 
 const SERVICES = [
   "Sessão de fotos",
@@ -13,8 +12,6 @@ const SERVICES = [
   "Consultoria",
   "Outro",
 ];
-
-const STATUSES: AppointmentStatus[] = ["pending", "confirmed", "cancelled"];
 
 export async function GET() {
   const user = await getSessionUser();
