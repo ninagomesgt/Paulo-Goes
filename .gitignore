@@ -36,6 +36,9 @@ yarn-error.log*
 # vercel
 .vercel
 
+# local data store (SQLite-free file db for the SaaS demo)
+/data
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
