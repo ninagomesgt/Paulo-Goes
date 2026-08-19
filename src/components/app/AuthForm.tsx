@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 const inputClass =
-  "w-full rounded-xl border border-zinc-300 bg-white px-4 py-2.5 text-sm text-zinc-900 outline-none transition-colors focus:border-brand focus:ring-2 focus:ring-indigo-100";
+  "w-full rounded-xl border border-zinc-700 bg-zinc-950 px-4 py-2.5 text-sm text-zinc-100 placeholder:text-zinc-500 outline-none transition-colors focus:border-brand focus:ring-2 focus:ring-amber-500/20";
 
 export default function AuthForm({ mode }: { mode: "login" | "register" }) {
   const router = useRouter();
@@ -47,7 +47,7 @@ export default function AuthForm({ mode }: { mode: "login" | "register" }) {
     <form onSubmit={handleSubmit} className="space-y-4">
       {!isLogin && (
         <div>
-          <label htmlFor="name" className="mb-1.5 block text-sm font-medium text-zinc-700">
+          <label htmlFor="name" className="mb-1.5 block text-sm font-medium text-zinc-300">
             Nome
           </label>
           <input
@@ -63,7 +63,7 @@ export default function AuthForm({ mode }: { mode: "login" | "register" }) {
       )}
 
       <div>
-        <label htmlFor="email" className="mb-1.5 block text-sm font-medium text-zinc-700">
+        <label htmlFor="email" className="mb-1.5 block text-sm font-medium text-zinc-300">
           E-mail
         </label>
         <input
@@ -78,7 +78,7 @@ export default function AuthForm({ mode }: { mode: "login" | "register" }) {
       </div>
 
       <div>
-        <label htmlFor="password" className="mb-1.5 block text-sm font-medium text-zinc-700">
+        <label htmlFor="password" className="mb-1.5 block text-sm font-medium text-zinc-300">
           Senha
         </label>
         <input
@@ -94,7 +94,7 @@ export default function AuthForm({ mode }: { mode: "login" | "register" }) {
       </div>
 
       {error && (
-        <p className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-600">
+        <p className="rounded-xl border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm text-red-300">
           {error}
         </p>
       )}
@@ -102,7 +102,7 @@ export default function AuthForm({ mode }: { mode: "login" | "register" }) {
       <button
         type="submit"
         disabled={loading}
-        className="w-full rounded-full bg-brand px-6 py-3 text-sm font-semibold text-white transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50"
+        className="w-full rounded-full bg-brand px-6 py-3 text-sm font-semibold text-brand-foreground transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50"
       >
         {loading
           ? isLogin
@@ -113,7 +113,7 @@ export default function AuthForm({ mode }: { mode: "login" | "register" }) {
             : "Criar conta"}
       </button>
 
-      <p className="pt-1 text-center text-sm text-zinc-500">
+      <p className="pt-1 text-center text-sm text-zinc-400">
         {isLogin ? (
           <>
             Não tem conta?{" "}

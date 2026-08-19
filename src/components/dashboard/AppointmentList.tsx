@@ -13,11 +13,9 @@ const statusLabel: Record<AppointmentStatus, string> = {
 };
 
 const statusClass: Record<AppointmentStatus, string> = {
-  pending:
-    "bg-amber-50 text-amber-700 border-amber-200",
-  confirmed:
-    "bg-emerald-50 text-emerald-700 border-emerald-200",
-  cancelled: "bg-red-50 text-red-600 border-red-200",
+  pending: "bg-amber-500/10 text-amber-300 border-amber-500/30",
+  confirmed: "bg-emerald-500/10 text-emerald-300 border-emerald-500/30",
+  cancelled: "bg-red-500/10 text-red-300 border-red-500/30",
 };
 
 function formatDate(date: string): string {

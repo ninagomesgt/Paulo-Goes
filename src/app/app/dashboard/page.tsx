@@ -19,16 +19,16 @@ export default async function DashboardPage() {
     <section className="mx-auto max-w-6xl px-4 py-10 sm:px-6">
       <div className="mb-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <h1 className="text-2xl font-bold tracking-tight text-zinc-900">
+          <h1 className="text-2xl font-bold tracking-tight text-zinc-50">
             Olá, {user.name.split(" ")[0]}
           </h1>
-          <p className="mt-1 text-zinc-600">
+          <p className="mt-1 text-zinc-400">
             Gerencie os agendamentos recebidos pela plataforma.
           </p>
         </div>
         <Link
           href="/agendar"
-          className="rounded-full bg-brand px-5 py-2.5 text-center text-sm font-semibold text-white transition-opacity hover:opacity-90"
+          className="rounded-full bg-brand px-5 py-2.5 text-center text-sm font-semibold text-brand-foreground transition-opacity hover:opacity-90"
         >
           + Novo agendamento
         </Link>
