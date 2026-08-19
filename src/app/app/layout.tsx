@@ -4,7 +4,7 @@ import LogoutButton from "@/components/app/LogoutButton";
 export default function AppLayout(props: LayoutProps<"/app">) {
   return (
     <>
-      <header className="border-b border-zinc-800 bg-zinc-950">
+      <header className="border-b border-zinc-800/60 bg-[#0b0b0b]">
         <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
           <div className="flex items-center gap-6">
             <Link
